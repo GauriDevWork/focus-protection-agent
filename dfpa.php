@@ -9,6 +9,8 @@ require_once __DIR__ . '/src/Agent/DFPAAgent.php';
 require_once __DIR__ . '/src/Utils/Logger.php';
 require_once __DIR__ . '/src/Signals/Signal.php';
 require_once __DIR__ . '/src/Analyzer/SignalAnalyzer.php';
+require_once __DIR__ . '/src/Decisions/Decision.php';
+require_once __DIR__ . '/src/Decisions/DecisionEngine.php';
 
 use DFPA\Agent\DFPAAgent;
 use DFPA\Sensors\GitSensor;
@@ -22,5 +24,10 @@ $agent->registerSensor(new GitSensor());
 $agent->registerSensor(new ActivitySensor());
 $agent->registerSensor(new BasecampSensor());
 
-$events = $agent->run();
-Logger::log($events);
+$result = $agent->run();
+
+Logger::log($result['signals']);
+
+if ($result['decision']) {
+    echo "DECISION → {$result['decision']->action}\n";
+}
