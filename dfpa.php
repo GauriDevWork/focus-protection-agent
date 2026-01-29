@@ -7,6 +7,8 @@ require_once __DIR__ . '/src/Sensors/ActivitySensor.php';
 require_once __DIR__ . '/src/Sensors/BasecampSensor.php';
 require_once __DIR__ . '/src/Agent/DFPAAgent.php';
 require_once __DIR__ . '/src/Utils/Logger.php';
+require_once __DIR__ . '/src/Signals/Signal.php';
+require_once __DIR__ . '/src/Analyzer/SignalAnalyzer.php';
 
 use DFPA\Agent\DFPAAgent;
 use DFPA\Sensors\GitSensor;

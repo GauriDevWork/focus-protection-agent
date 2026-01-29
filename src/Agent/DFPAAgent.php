@@ -3,11 +3,18 @@
 namespace DFPA\Agent;
 
 use DFPA\Sensors\SensorInterface;
+use DFPA\Analyzer\SignalAnalyzer;
 
 class DFPAAgent
 {
     /** @var SensorInterface[] */
     private array $sensors = [];
+    private SignalAnalyzer $analyzer;
+
+    public function __construct()
+    {
+        $this->analyzer = new SignalAnalyzer();
+    }
 
     public function registerSensor(SensorInterface $sensor): void
     {
@@ -22,6 +29,8 @@ class DFPAAgent
             $events = array_merge($events, $sensor->collect());
         }
 
-        return $events;
+        $this->analyzer->ingest($events);
+
+        return $this->analyzer->analyze();
     }
 }

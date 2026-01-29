@@ -4,14 +4,15 @@ namespace DFPA\Utils;
 
 class Logger
 {
-    public static function log(array $events): void
+    public static function log(array $items): void
     {
-        foreach ($events as $event) {
+        foreach ($items as $item) {
             echo sprintf(
-                "[%s] %s %s\n",
-                date('H:i:s', $event->timestamp),
-                $event->type,
-                json_encode($event->metadata)
+                "[%s] %s %.2f %s\n",
+                date('H:i:s', $item->timestamp),
+                $item->type,
+                $item->confidence,
+                json_encode($item->evidence)
             );
         }
     }
