@@ -18,7 +18,7 @@ class DecisionEngine
         usort($signals, fn($a, $b) => $b->confidence <=> $a->confidence);
 
         foreach ($signals as $signal) {
-            if ($signal->confidence < 0.6) {
+            if ($signal->confidence < 0.1) {
                 continue;
             }
 

@@ -1,16 +1,26 @@
 <?php
-
+// Core
 require_once __DIR__ . '/src/Events/Event.php';
+require_once __DIR__ . '/src/Signals/Signal.php';
+// Analyzer & Decision
+require_once __DIR__ . '/src/Analyzer/SignalAnalyzer.php';
+require_once __DIR__ . '/src/Decisions/Decision.php';
+require_once __DIR__ . '/src/Decisions/DecisionEngine.php';
+// Sensors
 require_once __DIR__ . '/src/Sensors/SensorInterface.php';
 require_once __DIR__ . '/src/Sensors/GitSensor.php';
 require_once __DIR__ . '/src/Sensors/ActivitySensor.php';
 require_once __DIR__ . '/src/Sensors/BasecampSensor.php';
+// Interventions
+require_once __DIR__ . '/src/Interventions/InterventionInterface.php';
+require_once __DIR__ . '/src/Interventions/CliIntervention.php';
+require_once __DIR__ . '/src/Interventions/OsNotificationIntervention.php';
+require_once __DIR__ . '/src/Interventions/InterventionDispatcher.php';
+// Agent & Utils
 require_once __DIR__ . '/src/Agent/DFPAAgent.php';
 require_once __DIR__ . '/src/Utils/Logger.php';
-require_once __DIR__ . '/src/Signals/Signal.php';
-require_once __DIR__ . '/src/Analyzer/SignalAnalyzer.php';
-require_once __DIR__ . '/src/Decisions/Decision.php';
-require_once __DIR__ . '/src/Decisions/DecisionEngine.php';
+
+
 
 use DFPA\Agent\DFPAAgent;
 use DFPA\Sensors\GitSensor;
