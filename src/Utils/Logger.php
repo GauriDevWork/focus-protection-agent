@@ -4,16 +4,22 @@ namespace DFPA\Utils;
 
 class Logger
 {
-    public static function log(array $items): void
+    private static function logFile(): string
     {
-        foreach ($items as $item) {
-            echo sprintf(
-                "[%s] %s %.2f %s\n",
-                date('H:i:s', $item->timestamp),
-                $item->type,
-                $item->confidence,
-                json_encode($item->evidence)
-            );
+        $dir = __DIR__ . '/../../logs';
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);
         }
+
+        return $dir . '/dfpa-' . date('Y-m-d') . '.log';
+    }
+
+    public static function logLine(string $line): void
+    {
+        file_put_contents(
+            self::logFile(),
+            $line . PHP_EOL,
+            FILE_APPEND
+        );
     }
 }
