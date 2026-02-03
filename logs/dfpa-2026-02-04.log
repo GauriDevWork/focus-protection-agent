@@ -1,0 +1,11 @@
+[04:23] EVENT GIT_ACTIVITY {"changed_files":1}
+[04:23] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[04:23] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[04:23] SIGNAL CODE_ACTIVITY confidence=0.1 {"changed_files":1}
+[04:24] EVENT GIT_ACTIVITY {"changed_files":1}
+[04:24] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[04:24] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[04:24] SIGNAL CODE_ACTIVITY confidence=0.2 {"changed_files":2}
+[04:24] SIGNAL EXTERNAL_INTERRUPTION confidence=0.4 {"notifications":2}
+[04:24] SIGNAL HIGH_ACTIVITY_DENSITY confidence=0.6 {"events":6}
+[04:24] DECISION SUGGEST_PAUSE reason=HIGH_ACTIVITY_DENSITY

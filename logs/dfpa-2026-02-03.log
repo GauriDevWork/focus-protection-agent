@@ -1,0 +1,26 @@
+[23:49] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[23:49] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[23:49] EVENT GIT_ACTIVITY {"changed_files":1}
+[23:49] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[23:49] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[23:49] SIGNAL CODE_ACTIVITY confidence=0.1 {"changed_files":1}
+[23:50] EVENT GIT_ACTIVITY {"changed_files":1}
+[23:50] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[23:50] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[23:50] SIGNAL CODE_ACTIVITY confidence=0.2 {"changed_files":2}
+[23:50] SIGNAL EXTERNAL_INTERRUPTION confidence=0.4 {"notifications":2}
+[23:50] SIGNAL HIGH_ACTIVITY_DENSITY confidence=0.6 {"events":6}
+[23:50] DECISION SUGGEST_PAUSE reason=HIGH_ACTIVITY_DENSITY
+[23:51] EVENT GIT_ACTIVITY {"changed_files":1}
+[23:51] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[23:51] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[23:51] SIGNAL CODE_ACTIVITY confidence=0.3 {"changed_files":3}
+[23:51] SIGNAL EXTERNAL_INTERRUPTION confidence=0.6 {"notifications":3}
+[23:51] SIGNAL HIGH_ACTIVITY_DENSITY confidence=0.6 {"events":9}
+[23:51] DECISION SUGGEST_FOCUS_LOCK reason=EXTERNAL_INTERRUPTION
+[23:52] EVENT GIT_ACTIVITY {"changed_files":1}
+[23:52] EVENT AGENT_HEARTBEAT {"status":"alive"}
+[23:52] EVENT EXTERNAL_NOTIFICATION {"source":"Basecamp"}
+[23:52] SIGNAL CODE_ACTIVITY confidence=0.4 {"changed_files":4}
+[23:52] SIGNAL EXTERNAL_INTERRUPTION confidence=0.8 {"notifications":4}
+[23:52] SIGNAL HIGH_ACTIVITY_DENSITY confidence=0.6 {"events":12}
